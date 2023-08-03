@@ -20,31 +20,9 @@ $(document).ready(function () {
             $("div.head ul").append(categories_html);
         },
     });
-    $.ajax({
-        url: "https://traveller.talrop.works/api/v1/places/",
-        success: function (response) {
-            let places = response.data;
-            let places_html = "";
-            places.forEach((place) => {
-                places_html += `<div class="item">
-                <a href="/detail.html?id=${place.id}">
-                    <div class="top">
-                        <img src="${place.image}" alt="${place.name}" />
-                    </div>
-                    <div class="middle"><h3>${place.name}</h3></div>
-                    <div class="bottom">
-                        <img src="images/place.svg" alt="Image" />
-                        <span>${place.location}</span>
-                    </div>
-                </a>
-            </div>`;
-            });
 
-            $("div.items").append(places_html);
-        },
-    });
-});
 
+})
 var askPrompt;
 
 var button = document.getElementById("install-button");
